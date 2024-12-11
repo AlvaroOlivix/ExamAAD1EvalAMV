@@ -48,6 +48,8 @@ dependencies {
     implementation(libs.room.coroutines)
     ksp(libs.room.ksp)
 
+    implementation(libs.gsonS)
+
 
 
     testImplementation(libs.junit)
