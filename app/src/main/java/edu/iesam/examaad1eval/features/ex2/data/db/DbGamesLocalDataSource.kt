@@ -6,10 +6,10 @@ class DbGamesLocalDataSource(
     private val gameDAO: GameDAO
 ) {
 
-    suspend fun getAll():List<Game>{
-        return gameDAO.getAll().map {
-            it.toModel()
-
+    suspend fun getAll():List<GameEntity>{
+        val games = gameDAO.getAll()
+        return games.ifEmpty {
+            emptyList()
         }
     }
 
